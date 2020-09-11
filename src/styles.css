@@ -70,7 +70,7 @@ nav p:hover {
   background-image: url("images/vertical-photo-1.jpg");
 }
 
-.hero {
+.top-hero {
   position: absolute;
   top: 30%;
   left: 18%;
@@ -79,11 +79,11 @@ nav p:hover {
 
 }
 
-.hero p {
+.top-hero p {
   font-size: 42px;
 }
 
-.hero em {
+.top-hero em {
   font-size: 28px;
 }
 
