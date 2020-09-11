@@ -1,4 +1,4 @@
-const renderMenuDiv = () => {
+const renderMenuNav = () => {
   const nav = document.querySelector("nav");
   const menu = document.createElement("div");
 

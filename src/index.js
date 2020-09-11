@@ -1,4 +1,5 @@
 import renderContactsNav from "./contacts.js"
+import renderMenuNav from "./menu.js"
 
 const displayController = (() => {
 
@@ -97,23 +98,34 @@ const displayController = (() => {
   const navContact = document.querySelector(".nav-contact");
 
   navContact.addEventListener("click", (e) => {
-    e.stopPropagation()
-    renderContactsNav()
+    const navDrop = document.querySelector(".dropdown-contact")
 
-    const dropDown = document.querySelector(".dropdown-nav")
-    dropDown.addEventListener("click",(e) =>  {
-      e.stopPropagation()
-    })
+    if(navDrop) {
+      navDrop.remove()
+      e.target.style.cssText = ""
+    } else {
+      renderContactsNav()
+      e.target.style.cssText = "background-color: rgba(233, 233, 233, 0.315); color: black;"
+    }
+
 
   }) 
 
-  
+  // Dropdown menu nav!
 
-  topDiv.addEventListener("click", (e) => {
-    const dropDown = document.querySelector(".dropdown-nav");
-    if(dropDown) {
-      dropDown.remove();
+  const navMenu = document.querySelector(".nav-menu");
+
+  navMenu.addEventListener("click", (e) => {
+    const menuDrop = document.querySelector(".dropdown-menu");
+
+    if(menuDrop) {
+      menuDrop.remove() 
+      e.target.style.cssText = ""
+    } else {
+      
+      e.target.style.cssText = "background-color: rgba(233, 233, 233, 0.315); color: black;"
     }
   })
+
 
 })()
