@@ -1,4 +1,4 @@
-
+import renderContactsNav from "./contacts.js"
 
 const displayController = (() => {
 
@@ -19,23 +19,27 @@ const displayController = (() => {
 
   // nav items
   let p = document.createElement("p");
-
+  p.classList.add("nav-contact")
   p.innerHTML = "Contact";
   nav.appendChild(p);
 
   p = document.createElement("p");
+  p.classList.add("nav-menu")
   p.innerHTML = "Menu";
   nav.appendChild(p)
   
   p = document.createElement("p");
+  p.classList.add("nav-career")
   p.innerHTML = "Career";
   nav.appendChild(p)
 
   p = document.createElement("p");
+  p.classList.add("nav-locations")
   p.innerHTML = "Locations";
   nav.appendChild(p)
 
   p = document.createElement("p");
+  p.classList.add("nav-reservations")
   p.innerHTML = "Reservations";
   nav.appendChild(p);
 
@@ -50,8 +54,9 @@ const displayController = (() => {
   temp.innerHTML = "Odin Restaurant - Best Meals in Town"
   topHero.appendChild(temp)
 
-  temp.innerHTML = "Come See for Yourself"
-  topHero.appendChild(temp)
+  let em = document.createElement("em");
+  em.innerHTML = "Come See for Yourself"
+  topHero.appendChild(em)
 
   // ---------- BOTTOM DIV ----------
 
@@ -85,4 +90,30 @@ const displayController = (() => {
   box3.querySelector("section").appendChild(p)
 
  
+  // -------- EVENT LISTENERS --------
+
+  // Dropdown contacts nav!
+
+  const navContact = document.querySelector(".nav-contact");
+
+  navContact.addEventListener("click", (e) => {
+    e.stopPropagation()
+    renderContactsNav()
+
+    const dropDown = document.querySelector(".dropdown-nav")
+    dropDown.addEventListener("click",(e) =>  {
+      e.stopPropagation()
+    })
+
+  }) 
+
+  
+
+  topDiv.addEventListener("click", (e) => {
+    const dropDown = document.querySelector(".dropdown-nav");
+    if(dropDown) {
+      dropDown.remove();
+    }
+  })
+
 })()
