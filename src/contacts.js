@@ -1,6 +1,7 @@
 const renderContactsNav = () => {
   const nav = document.querySelector("nav");
   const contact = document.createElement("div");
+  nav.appendChild(contact)
 
   contact.classList.add("dropdown-nav", "dropdown-contact")
 
@@ -18,7 +19,10 @@ const renderContactsNav = () => {
   li.innerHTML = "Phone: (555) 555-1234"
   ul.appendChild(li)
 
-  nav.appendChild(contact)
+  li = document.createElement("li");
+  li.innerHTML = "Email: address@info.com"
+  ul.appendChild(li);
+
 }
 
 export default renderContactsNav;
